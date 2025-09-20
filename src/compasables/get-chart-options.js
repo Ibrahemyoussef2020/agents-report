@@ -16,7 +16,7 @@ export const useChartOptions = () => {
 
 	const getChartOptions = (chart) => {
 
-		const showToolbar = route.path !== "/report-pdf";
+		const showToolbar = true;
 		const commonOptions = {
 			chart: {
 				type: chart.type,

@@ -8,8 +8,8 @@
                 title="Overview"
             />
                <HandleChartsVisibility
-                v-if="agentStore.schema1[1]?.report_data && Object.values(agentStore.schema1[1]?.report_data)?.length"
-                :charts="Object.values(agentStore.schema1[1]?.report_data)"
+                v-if="schemaData?.data?.data[1]?.report_data && Object.values(schemaData?.data?.data[1]?.report_data)?.length"
+                :charts="Object.values(schemaData?.data?.data[1]?.report_data)"
             />
         </div>
     </section>
@@ -35,11 +35,11 @@ const schemaData = ref({});
 
 onMounted(()=>{
     
-schemaData.value = agentStore.getStaticReport(1)
+schemaData.value = agentStore.getStaticReport(props.index)
     
 
-console.log(schemaData.value?.data?.[0]?.report_data?.schema
-);
+console.log(schemaData.value?.data?.data?.[0]?.report_data?.schema);
+console.log(schemaData.value?.data?.data[1]?.report_data);
 
 })
 
