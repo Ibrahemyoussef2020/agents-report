@@ -7,13 +7,13 @@
             </div>
             <div v-else class="data-list">
                 <div v-for="(info, index) in data" :key="index" class="data-item">
-                    <h4 v-if="isNaN(+index)" class="item-title">
+                    <h4 v-if="isNaN(+index)" class="item-title" @click="toggleCollapse(index)">
                         {{ index.replaceAll('_', ' ') }}
-                        <button class="toggle-btn" @click="toggleCollapse(index)">
+                        <button class="toggle-btn">
                             {{ collapsed[index] ? '+' : '-' }}
                         </button>
                     </h4>
-                    <div v-show="!collapsed[index]" class="item-content">
+                    <div :class="['item-content', collapsed[index] ? 'hide' : 'show']">
                         <div v-if="typeof info === 'string' || typeof info === 'number'">
                             {{ info }}
                         </div>
@@ -69,14 +69,16 @@ const toggleCollapse = (index) => {
     background: white;
     border: 1px solid #ddd;
     border-radius: 8px;
-    font-family: Arial, sans-serif;
+    font-family: 'cairo' , Arial, sans-serif;
+
+    --primary-color:#15803d;
 }
 
 .title {
-    font-size: 24px;
+    font-size:1rem;
     margin-bottom: 20px;
     color: #333;
-    border-bottom: 2px solid #007bff;
+    border-bottom: 2px solid var(--primary-color);
     padding-bottom: 10px;
 }
 
@@ -102,16 +104,19 @@ const toggleCollapse = (index) => {
 
 .item-title {
     margin: 0 0 10px 0;
-    font-size: 18px;
-    color: #007bff;
+    font-size:1rem;
+    color: var(--primary-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-transform: capitalize;
+    cursor: pointer;
+    font-weight: 500;
+    color: #1a3828 !important;
 }
 
 .toggle-btn {
-    background: #007bff;
+    background: var(--primary-color);
     color: white;
     border: none;
     width: 24px;
@@ -131,6 +136,25 @@ const toggleCollapse = (index) => {
 .item-content {
     font-size: 14px;
     line-height: 1.5;
+    overflow: hidden;
+     padding-top: 0px;
+       transition: all 0.5s linear ;
+       animation-fill-mode: forwards !important;
+}
+
+.item-content.show {
+    /* max-height: 1000px;
+    opacity: 1;
+    padding-top: 0px; */
+    animation: show .5s linear;
+}
+
+.item-content.hide {
+    /* max-height: 0;
+    opacity: 0;
+    padding-top: 0; */
+
+    animation: hide .5s linear;
 }
 
 .nested-item {
@@ -159,6 +183,11 @@ const toggleCollapse = (index) => {
     margin-bottom: 0;
 }
 
+.part p , .part li , .part span{
+  color: #132d1f !important;
+  color: #0f1a13 !important;
+}
+
 @media (max-width: 768px) {
     .part {
         padding: 15px;
@@ -171,5 +200,27 @@ const toggleCollapse = (index) => {
     .item-title {
         font-size: 16px;
     }
+}
+
+@keyframes show {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100%{
+    max-height: 1000px;
+     opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    max-height: 1000px;
+     opacity: 1;
+  }
+  100%{
+    max-height: 0px;
+     opacity: 0;
+  }
 }
 </style>

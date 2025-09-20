@@ -99,6 +99,10 @@ const agentsReport = [
     },
     "message": "Created"
 },
+
+
+//////////////////////////////// 2 /////////////////////////////
+
 {
     "status": true,
     "status_code": 201,
@@ -250,6 +254,11 @@ const agentsReport = [
     },
     "message": "Created"
 },
+
+
+/////////////////////////// 3 /////////////////////////
+
+
 {
     "status": true,
     "status_code": 201,
@@ -346,6 +355,8 @@ const agentsReport = [
     "message": "Created"
 },
 
+////////////////////////////// 4 //////////////////////
+
 {
     "status": true,
     "status_code": 201,
@@ -403,63 +414,11 @@ const agentsReport = [
     },
     "message": "Created"
 },
-{
-    "status": true,
-    "status_code": 201,
-    "data": {
-        "status": "true",
-        "report_id": 136,
-        "message": "return Static Response",
-        "data": [
-            {
-                "title": "data",
-                "report_data": {
-                    "title": "Applications",
-                    "schema": {
-                        "industry_use_cases": [
-                            "Islamic fintech solutions",
-                            "Digital Islamic banking"
-                        ],
-                        "success_stories": [],
-                        "emerging_use_cases": [],
-                        "References": [
-                            "https:\/\/www.sama.org.sa\/en\/Pages\/Home.aspx",
-                            "https:\/\/www.mof.gov.sa\/en\/AboutUS\/Pages\/BankingInSaudiArabia.aspx",
-                            "https:\/\/www.sakat.org\/home"
-                        ]
-                    }
-                }
-            },
-            {
-                "title": "charts",
-                "report_data": [
-                    {
-                        "type": "pie",
-                        "series": [
-                            0.3,
-                            0.25,
-                            0.15,
-                            0.1,
-                            0.2
-                        ],
-                        "labels": [
-                            "Digital Islamic Banking",
-                            "Islamic Investment Platforms",
-                            "Crowdfunding",
-                            "Microfinance",
-                            "Other"
-                        ],
-                        "title": "Importance of Industry Applications in Islamic Fintech",
-                        "description": "This pie chart visualizes the relative importance of various Applications within the realm of Islamic fintech in Saudi Arabia, as highlighted in the provided chat history.  Digital Islamic banking emerges as the most prominent use case, representing 30% of the total applications discussed. This reflects the growing demand for convenient and accessible financial services that adhere to Islamic principles. Islamic investment platforms follow closely at 25%, demonstrating the increasing interest in Shariah-compliant investment opportunities. Crowdfunding, microfinance, and other emerging Applications contribute significantly to the diverse landscape of Islamic fintech in Saudi Arabia.  This chart provides a clear snapshot of the current trends and priorities within this dynamic sector.",
-                        "caption": "Exploring the diverse applications of Islamic Fintech in Saudi Arabia: Digital banking takes the lead.",
-                        "time_id": "1752769530585386"
-                    }
-                ]
-            }
-        ]
-    },
-    "message": "Created"
-},
+
+
+///////////////////////////////// 5 ////////////////////////
+
+
 {
     "status": true,
     "status_code": 201,
@@ -525,6 +484,9 @@ const agentsReport = [
     },
     "message": "Created"
 },
+
+
+//////////////////////////////////// 6 ////////////////////
 
 {
     "status": true,
@@ -592,13 +554,6 @@ const agentsReport = [
         ]
     },
     "message": "Created"
-}
-
-
-
-
-
-
-
-];
+},
+]
 export default agentsReport

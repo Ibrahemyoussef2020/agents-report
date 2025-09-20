@@ -38,7 +38,7 @@ onMounted(()=>{
 schemaData.value = agentStore.getStaticReport(1)
     
 
-console.log(schemaData.value?.data?.data?.[0]?.report_data?.schema
+console.log(schemaData.value?.data?.[0]?.report_data?.schema
 );
 
 })
